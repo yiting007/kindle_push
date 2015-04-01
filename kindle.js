@@ -3,29 +3,29 @@
 var prompt = require('prompt');
 var nodemailer = require('nodemailer');
 
-var email = '';
-var password = '';
+var kindleEmail = 'yiting.star_7@kindle.com';
 
 var properties = [
 {
     name: 'email', 
-        validator: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        warning: 'Invalid email format!'
+    validator: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    warning: 'Invalid email format!'
 },
 {
     name: 'password',
     hidden: true
+},
+{
+    name: 'file',
 }
-];
+]
 
 prompt.start();
 
 prompt.get(properties, function (err, result) {
     if (err) { return onErr(err); }
     console.log('Command-line input received, sending email');
-    email = result.email;
-    password = result.password;
-    send();
+    send(result.email, result.password, result.file);
 });
 
 function onErr(err) {
@@ -34,7 +34,7 @@ function onErr(err) {
 }
 
 
-function send(){
+function send(email, password, file){
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -44,11 +44,14 @@ function send(){
     });
 
     var mailOptions = {
-        from: 'yiting kindle ✔ <yiting.star@gmail.com>', // sender address
-        to: 'yiting.star@gmail.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world ✔', // plaintext body
-        html: '<b>Hello world ✔</b>' // html body
+        from: email, 
+        to: kindleEmail,
+        subject: 'kindle book file',
+        attachments:[
+            {   
+                path: file
+            }
+        ]
     };
 
     // send mail with defined transport object
