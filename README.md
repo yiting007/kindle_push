@@ -12,11 +12,7 @@ $ npm install --save kindle-push
 
 ## Usage
 
-```js
-var kindlePush = require('kindle-push');
 
-kindlePush('Rainbow');
-```
 
 
 ## License
