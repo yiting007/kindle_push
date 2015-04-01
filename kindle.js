@@ -3,7 +3,7 @@
 var prompt = require('prompt');
 var nodemailer = require('nodemailer');
 
-var kindleEmail = 'yiting.star_7@kindle.com';
+var kindleEmail = 'xxx@kindle.com';
 
 var properties = [
 {
