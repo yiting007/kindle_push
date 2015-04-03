@@ -29,7 +29,7 @@ var pushService = {
   },
 
   load: function() {
-    var data = fs.readFileSync('.kindle.json', 'utf8');
+    var data = fs.readFileSync(process.env['HOME'] + '/.kindle.json', 'utf8');
     this.configJson = JSON.parse(data);
 
     var files = process.argv.slice(2);
