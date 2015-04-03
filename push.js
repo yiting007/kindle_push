@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict'
 
 /*
@@ -91,6 +92,10 @@ var pushService = {
     valid = emailPattern.test(this.configJson.receiverEmail);
     if (!valid) {
       console.log('[Wrong format]: please check your receiver email: ' + this.configJson.receiverEmail);
+      return false;
+    }
+    if (!this.attachmentFiles.length) {
+      console.log('[No attachment found]:');
       return false;
     }
     for (var i = 0, len = this.attachmentFiles.length; i < len; i++) {

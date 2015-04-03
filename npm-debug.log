@@ -1,59 +1,21 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'yiting/prompt' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'link' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.36
-4 verbose readDependencies using package.json deps
-5 verbose cache add [ 'yiting/prompt', null ]
-6 verbose cache add name=undefined spec="yiting/prompt" args=["yiting/prompt",null]
-7 verbose parsed url { protocol: null,
-7 verbose parsed url   slashes: null,
-7 verbose parsed url   auth: null,
-7 verbose parsed url   host: null,
-7 verbose parsed url   port: null,
-7 verbose parsed url   hostname: null,
-7 verbose parsed url   hash: null,
-7 verbose parsed url   search: null,
-7 verbose parsed url   query: null,
-7 verbose parsed url   pathname: 'yiting/prompt',
-7 verbose parsed url   path: 'yiting/prompt',
-7 verbose parsed url   href: 'yiting/prompt' }
-8 silly lockFile 1cf077df-yiting-prompt yiting/prompt
-9 verbose lock yiting/prompt /Users/yiting/.npm/1cf077df-yiting-prompt.lock
-10 info maybeGithub Attempting yiting/prompt from git://github.com/yiting/prompt
-11 silly lockFile 1d39ad56-git-github-com-yiting-prompt git://github.com/yiting/prompt
-12 verbose lock git://github.com/yiting/prompt /Users/yiting/.npm/1d39ad56-git-github-com-yiting-prompt.lock
-13 verbose addRemoteGit [ 'git://github.com/yiting/prompt', 'master' ]
-14 verbose git clone git://github.com/yiting/prompt Cloning into bare repository '/Users/yiting/.npm/_git-remotes/git-github-com-yiting-prompt-1d39ad56'...
-14 verbose git clone git://github.com/yiting/prompt fatal: remote error:
-14 verbose git clone git://github.com/yiting/prompt   Repository not found.
-15 silly lockFile 1d39ad56-git-github-com-yiting-prompt git://github.com/yiting/prompt
-16 silly lockFile 1d39ad56-git-github-com-yiting-prompt git://github.com/yiting/prompt
-17 info maybeGithub Attempting yiting/prompt from git+ssh://git@github.com:yiting/prompt
-18 silly lockFile 83c22e29-git-github-com-yiting-prompt git@github.com:yiting/prompt
-19 verbose lock git@github.com:yiting/prompt /Users/yiting/.npm/83c22e29-git-github-com-yiting-prompt.lock
-20 verbose addRemoteGit [ 'git@github.com:yiting/prompt', 'master' ]
-21 error git clone git@github.com:yiting/prompt Cloning into bare repository '/Users/yiting/.npm/_git-remotes/git-github-com-yiting-prompt-83c22e29'...
-21 error git clone git@github.com:yiting/prompt Warning: Permanently added the RSA host key for IP address '192.30.252.131' to the list of known hosts.
-21 error git clone git@github.com:yiting/prompt Permission denied (publickey).
-21 error git clone git@github.com:yiting/prompt fatal: Could not read from remote repository.
-21 error git clone git@github.com:yiting/prompt
-21 error git clone git@github.com:yiting/prompt Please make sure you have the correct access rights
-21 error git clone git@github.com:yiting/prompt and the repository exists.
-22 silly lockFile 83c22e29-git-github-com-yiting-prompt git@github.com:yiting/prompt
-23 silly lockFile 83c22e29-git-github-com-yiting-prompt git@github.com:yiting/prompt
-24 silly lockFile 1cf077df-yiting-prompt yiting/prompt
-25 silly lockFile 1cf077df-yiting-prompt yiting/prompt
-26 error addLocal Could not install yiting/prompt
-27 error Error: ENOENT, stat 'yiting/prompt'
-28 error If you need help, you may report this *entire* log,
-28 error including the npm and node versions, at:
-28 error     <http://github.com/npm/npm/issues>
-29 error System Darwin 14.1.0
-30 error command "node" "/usr/local/bin/npm" "install" "yiting/prompt"
-31 error cwd /Users/yiting/Documents/pra/fun
-32 error node -v v0.10.36
-33 error npm -v 1.4.28
-34 error path yiting/prompt
-35 error code ENOENT
-36 error errno 34
-37 verbose exit [ 34, true ]
+4 verbose linkPkg /Users/yiting/Documents/pra/kindle_push
+5 error Error: EACCES, symlink '/Users/yiting/Documents/pra/kindle_push'
+5 error  { [Error: EACCES, symlink '/Users/yiting/Documents/pra/kindle_push']
+5 error   errno: 3,
+5 error   code: 'EACCES',
+5 error   path: '/Users/yiting/Documents/pra/kindle_push' }
+6 error Please try running this command again as root/Administrator.
+7 error System Darwin 14.1.0
+8 error command "node" "/usr/local/bin/npm" "link"
+9 error cwd /Users/yiting/Documents/pra/kindle_push
+10 error node -v v0.10.36
+11 error npm -v 1.4.28
+12 error path /Users/yiting/Documents/pra/kindle_push
+13 error code EACCES
+14 error errno 3
+15 error stack Error: EACCES, symlink '/Users/yiting/Documents/pra/kindle_push'
+16 verbose exit [ 3, true ]
