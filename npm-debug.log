@@ -1,21 +1,76 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'link' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.36
-4 verbose linkPkg /Users/yiting/Documents/pra/kindle_push
-5 error Error: EACCES, symlink '/Users/yiting/Documents/pra/kindle_push'
-5 error  { [Error: EACCES, symlink '/Users/yiting/Documents/pra/kindle_push']
-5 error   errno: 3,
-5 error   code: 'EACCES',
-5 error   path: '/Users/yiting/Documents/pra/kindle_push' }
-6 error Please try running this command again as root/Administrator.
-7 error System Darwin 14.1.0
-8 error command "node" "/usr/local/bin/npm" "link"
-9 error cwd /Users/yiting/Documents/pra/kindle_push
-10 error node -v v0.10.36
-11 error npm -v 1.4.28
-12 error path /Users/yiting/Documents/pra/kindle_push
-13 error code EACCES
-14 error errno 3
-15 error stack Error: EACCES, symlink '/Users/yiting/Documents/pra/kindle_push'
-16 verbose exit [ 3, true ]
+4 verbose publish [ '.' ]
+5 verbose cache add [ '.', null ]
+6 verbose cache add name=undefined spec="." args=[".",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: '.',
+7 verbose parsed url   path: '.',
+7 verbose parsed url   href: '.' }
+8 silly lockFile 3a52ce78- .
+9 verbose lock . /Users/yiting/.npm/3a52ce78-.lock
+10 verbose tar pack [ '/Users/yiting/.npm/kindle-push/0.0.0/package.tgz', '.' ]
+11 verbose tarball /Users/yiting/.npm/kindle-push/0.0.0/package.tgz
+12 verbose folder .
+13 info prepublish kindle-push@0.0.0
+14 silly lockFile 1f1177db-tar tar://.
+15 verbose lock tar://. /Users/yiting/.npm/1f1177db-tar.lock
+16 silly lockFile 02b01fc5-pm-kindle-push-0-0-0-package-tgz tar:///Users/yiting/.npm/kindle-push/0.0.0/package.tgz
+17 verbose lock tar:///Users/yiting/.npm/kindle-push/0.0.0/package.tgz /Users/yiting/.npm/02b01fc5-pm-kindle-push-0-0-0-package-tgz.lock
+18 silly lockFile 1f1177db-tar tar://.
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 02b01fc5-pm-kindle-push-0-0-0-package-tgz tar:///Users/yiting/.npm/kindle-push/0.0.0/package.tgz
+21 silly lockFile 02b01fc5-pm-kindle-push-0-0-0-package-tgz tar:///Users/yiting/.npm/kindle-push/0.0.0/package.tgz
+22 silly lockFile d1a730fc-ng-npm-kindle-push-0-0-0-package /Users/yiting/.npm/kindle-push/0.0.0/package
+23 verbose lock /Users/yiting/.npm/kindle-push/0.0.0/package /Users/yiting/.npm/d1a730fc-ng-npm-kindle-push-0-0-0-package.lock
+24 silly lockFile d1a730fc-ng-npm-kindle-push-0-0-0-package /Users/yiting/.npm/kindle-push/0.0.0/package
+25 silly lockFile d1a730fc-ng-npm-kindle-push-0-0-0-package /Users/yiting/.npm/kindle-push/0.0.0/package
+26 silly lockFile 3a52ce78- .
+27 silly lockFile 3a52ce78- .
+28 silly publish { name: 'kindle-push',
+28 silly publish   version: '0.0.0',
+28 silly publish   description: 'Push to Kindle using command line',
+28 silly publish   author: { name: 'Yiting Li', email: 'yiting.star@gmail.com' },
+28 silly publish   repository: { type: 'git', url: 'https://github.com/yiting007/kindle-push' },
+28 silly publish   license: 'MIT',
+28 silly publish   files: [ 'index.js' ],
+28 silly publish   keywords: [ 'kindle-push', 'kindle push node' ],
+28 silly publish   dependencies: {},
+28 silly publish   devDependencies:
+28 silly publish    { 'grunt-cli': '^0.1.13',
+28 silly publish      'grunt-contrib-jshint': '^0.11.0',
+28 silly publish      'grunt-contrib-nodeunit': '^0.4.1',
+28 silly publish      'grunt-contrib-watch': '^0.6.1',
+28 silly publish      'grunt-mocha-cli': '^1.12.0',
+28 silly publish      'jshint-stylish': '^1.0.1',
+28 silly publish      'load-grunt-tasks': '^3.1.0',
+28 silly publish      'time-grunt': '^1.1.0' },
+28 silly publish   scripts: { test: 'grunt' },
+28 silly publish   bin: { kindle_push: 'push.js' },
+28 silly publish   readme: '\n> Push to Kindle using command line, for personal use\n\n\n## Install\n\n```sh\n$ npm install --save kindle-push\n```\n\n\n## Usage\n\nFirst set up the configuration file name .kindle.json under $HOME\nExample json file:\n```txt\n   {\n    "serviceType"   : "gmail",\n    "serviceEmail"  : "sEmail",\n    "servicePwd"    : "sPwd",\n    "senderEmail"   : "xxx@gmail.com",\n    "receiverEmail" : "xxx@kindle.com"\n   }\n```\nThen run command\n```sh\n$ kindle_push [file1] [file2] ...\n```\n\n\n\n\n## License\n\nMIT © [Yiting Li]()\n',
+28 silly publish   readmeFilename: 'README.md',
+28 silly publish   gitHead: '517ed4f8b74bdb338c81df14058c952982760235',
+28 silly publish   bugs: { url: 'https://github.com/yiting007/kindle-push/issues' },
+28 silly publish   homepage: 'https://github.com/yiting007/kindle-push',
+28 silly publish   _id: 'kindle-push@0.0.0',
+28 silly publish   _shasum: 'dbc25e5a097032caaada877106e2e16af259daf9',
+28 silly publish   _from: '.' }
+29 error need auth auth and email required for publishing
+29 error need auth You need to authorize this machine using `npm adduser`
+30 error System Darwin 14.1.0
+31 error command "node" "/usr/local/bin/npm" "publish"
+32 error cwd /Users/yiting/Documents/pra/kindle_push
+33 error node -v v0.10.36
+34 error npm -v 1.4.28
+35 error code ENEEDAUTH
+36 verbose exit [ 1, true ]
