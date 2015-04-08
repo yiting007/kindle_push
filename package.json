@@ -1,6 +1,6 @@
 {
   "name": "kindle_push",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Push to Kindle using command line",
   "author": {
     "name": "Yiting Li",
@@ -15,7 +15,10 @@
     "kindle-push",
     "kindle push node"
   ],
-  "dependencies": {},
+  "dependencies": {
+      "inquirer" : "*",
+      "nodemailer": "*"
+  },
   "devDependencies": {
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.0",
