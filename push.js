@@ -46,7 +46,7 @@ var pushService = {
 
   book: function(file) {
     console.log('Adding book ' + file + '...');
-    this.attachmentFiles.push(file);
+    this.attachmentFiles.push({ 'path': file} );
   },
 
   mailConfig: function() {
@@ -100,9 +100,9 @@ var pushService = {
     }
     for (var i = 0, len = this.attachmentFiles.length; i < len; i++) {
       try{
-          fs.statSync(this.attachmentFiles[i]);
+          fs.statSync(this.attachmentFiles[i]['path']);
       }catch(err){
-          console.log('[File not found]: ' + this.attachmentFiles[i]);
+          console.log('[File not found]: ' + this.attachmentFiles[i]['path']);
           if(err.code == 'ENOENT') return false;
       }
     }
