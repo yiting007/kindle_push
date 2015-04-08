@@ -4,16 +4,19 @@
 /*
    {
     "serviceType"   : "gmail",
-    "serviceEmail"  : "sEmail",
-    "servicePwd"    : "sPwd",
-    "senderEmail"   : "xxx@gmail.com",
-    "receiverEmail" : "xxx@kindle.com"
+    "serviceEmail"  : "your service email",
+    "servicePwd"    : "your service email's password",
+    "senderEmail"   : "your sender email",
+    "receiverEmail" : "your kindle email"
    }
 
 */
 
 var fs = require('fs');
 var nodemailer = require('nodemailer');
+var inquirer = require("inquirer");
+
+var filePath = process.env['HOME'] + '/.kindle.json';
 
 var pushService = {
   transporter: {},
@@ -21,7 +24,7 @@ var pushService = {
   attachmentFiles: [],
 
   configJson: {
-    serviceType: '',
+    serviceType: 'gmail',   //for now support gmail only
     serviceEmail: '',
     servicePwd: '',
     senderEmail: '',
@@ -29,7 +32,7 @@ var pushService = {
   },
 
   load: function() {
-    var data = fs.readFileSync(process.env['HOME'] + '/.kindle.json', 'utf8');
+    var data = fs.readFileSync(filePath, 'utf8');
     this.configJson = JSON.parse(data);
 
     var files = process.argv.slice(2);
@@ -110,4 +113,49 @@ var pushService = {
   }
 };
 
-pushService.load();
+(function() {
+    fs.readFile(filePath, function (err, data) {
+        if (err) {
+            if (err.code === 'ENOENT') {
+                console.log('Config file not found, creating one...');
+                var params = [
+                    {
+                        type: 'input',
+                        name: 'serviceEmail',
+                        message: 'Service email(gmail):'
+                    },
+                    {
+                        type: 'password',
+                        name: 'servicePwd',
+                        message: 'Service password:'
+                    },
+                    {
+                        type: 'input',
+                        name: 'senderEmail',
+                        message: 'Sender email:'
+                    },
+                    {
+                        type: 'input',
+                        name: 'receiverEmail',
+                        message: 'Kindle email'
+                    }
+                ]
+                inquirer.prompt(params, function(ans){
+                    for (var k in ans) {
+                        pushService.configJson[k] = ans[k];
+                    }
+                    fs.writeFile(filePath, JSON.stringify(pushService.configJson, null, 4), function(err) {
+                        if(err) {
+                            console.log(err);
+                        }else{
+                            console.log('Config file saved to ' + filePath + ', ready for use, exist');
+                        }
+                    });
+                });
+            }
+        }else{
+            pushService.load();
+        }
+    });
+}());
+
