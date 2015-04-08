@@ -1,18 +1,19 @@
 {
   "name": "kindle_push",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Push to Kindle using command line",
   "author": {
     "name": "Yiting Li",
     "email": "yiting.star@gmail.com"
   },
-  "repository": "yiting007/kindle-push",
+  "repository": "yiting007/kindle_push",
   "license": "MIT",
   "files": [
     "push.js"
   ],
   "keywords": [
-    "kindle-push",
+    "kindle",
+    "kindle push",
     "kindle push node"
   ],
   "dependencies": {

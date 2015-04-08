@@ -34,4 +34,4 @@ $ kindle_push [file1] [file2] ...
 
 ## License
 
-MIT © [Yiting Li]()
+MIT © Yiting Li
