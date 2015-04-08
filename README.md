@@ -5,7 +5,7 @@
 ## Install
 
 ```sh
-$ npm install --save kindle-push
+$ npm install kindle_push
 ```
 
 
