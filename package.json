@@ -1,6 +1,6 @@
 {
   "name": "kindle-push",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Push to Kindle using command line",
   "author": {
     "name": "Yiting Li",
